@@ -1,0 +1,755 @@
+Mac version
+
+Using ReadLine
+
+Running 64Bit Version
+
+mothur v.1.38.1
+Last updated: 8/9/2016
+
+by
+Patrick D. Schloss
+
+Department of Microbiology & Immunology
+University of Michigan
+pschloss@umich.edu
+http://www.mothur.org
+
+When using, please cite:
+Schloss, P.D., et al., Introducing mothur: Open-source, platform-independent, community-supported software for describing and comparing microbial communities. Appl Environ Microbiol, 2009. 75(23):7537-41.
+
+Distributed under the GNU General Public License
+
+Type 'help()' for information on the commands that are available
+
+Type 'quit()' to exit program
+Interactive Mode
+
+
+mothur > make.contigs(file=stability.files, processors=2)
+
+Using 2 processors.
+
+>>>>>	Processing file pair Adiu_O36_forward_paired.fq - Adiu_O36_reverse_paired.fq (files 1 of 11)	<<<<<
+Making contigs...
+Done.
+
+It took 387 secs to assemble 370678 reads.
+
+
+>>>>>	Processing file pair Adiu_O37_forward_paired.fq - Adiu_O37_reverse_paired.fq (files 2 of 11)	<<<<<
+Making contigs...
+Done.
+
+It took 285 secs to assemble 268567 reads.
+
+
+>>>>>	Processing file pair Tcon_O42_forward_paired.fq - Tcon_O42_reverse_paired.fq (files 3 of 11)	<<<<<
+Making contigs...
+Done.
+
+It took 208 secs to assemble 203586 reads.
+
+
+>>>>>	Processing file pair Tcon_O43_forward_paired.fq - Tcon_O43_reverse_paired.fq (files 4 of 11)	<<<<<
+Making contigs...
+Done.
+
+It took 164 secs to assemble 157548 reads.
+
+
+>>>>>	Processing file pair Tcon_O44_forward_paired.fq - Tcon_O44_reverse_paired.fq (files 5 of 11)	<<<<<
+Making contigs...
+Done.
+
+It took 87 secs to assemble 94835 reads.
+
+
+>>>>>	Processing file pair Tpar_O32_forward_paired.fq - Tpar_O32_reverse_paired.fq (files 6 of 11)	<<<<<
+Making contigs...
+Done.
+
+It took 163 secs to assemble 171632 reads.
+
+
+>>>>>	Processing file pair Tpar_O33_forward_paired.fq - Tpar_O33_reverse_paired.fq (files 7 of 11)	<<<<<
+Making contigs...
+Done.
+
+It took 170 secs to assemble 177211 reads.
+
+
+>>>>>	Processing file pair Tpar_O34_forward_paired.fq - Tpar_O34_reverse_paired.fq (files 8 of 11)	<<<<<
+Making contigs...
+Done.
+
+It took 150 secs to assemble 162963 reads.
+
+
+>>>>>	Processing file pair Ttae_O39_forward_paired.fq - Ttae_O39_reverse_paired.fq (files 9 of 11)	<<<<<
+Making contigs...
+Done.
+
+It took 114 secs to assemble 121860 reads.
+
+
+>>>>>	Processing file pair Ttae_O40_forward_paired.fq - Ttae_O40_reverse_paired.fq (files 10 of 11)	<<<<<
+Making contigs...
+Done.
+
+It took 247 secs to assemble 262934 reads.
+
+
+>>>>>	Processing file pair Ttae_O41_forward_paired.fq - Ttae_O41_reverse_paired.fq (files 11 of 11)	<<<<<
+Making contigs...
+Done.
+
+It took 252 secs to assemble 271292 reads.
+
+It took 2227 secs to process 2263106 sequences.
+
+Group count: 
+Adiu_O36	370678
+Adiu_O37	268567
+Tcon_O42	203586
+Tcon_O43	157548
+Tcon_O44	94835
+Tpar_O32	171632
+Tpar_O33	177211
+Tpar_O34	162963
+Ttae_O39	121860
+Ttae_O40	262934
+Ttae_O41	271292
+
+Total of all groups is 2263106
+
+Output File Names: 
+stability.trim.contigs.fasta
+stability.trim.contigs.qual
+stability.contigs.report
+stability.scrap.contigs.fasta
+stability.scrap.contigs.qual
+stability.contigs.groups
+
+[WARNING]: your sequence names contained ':'.  I changed them to '_' to avoid problems in your downstream analysis.
+
+mothur > summary.seqs(fasta=stability.trim.contigs.fasta)
+
+Using 2 processors.
+
+		Start	End	NBases	Ambigs	Polymer	NumSeqs
+Minimum:	1	250	250	0	3	1
+2.5%-tile:	1	441	441	0	4	56578
+25%-tile:	1	464	464	0	5	565777
+Median: 	1	465	465	1	5	1131554
+75%-tile:	1	465	465	5	6	1697330
+97.5%-tile:	1	465	465	19	6	2206529
+Maximum:	1	601	601	65	300	2263106
+Mean:	1	463.705	463.705	3.52347	5.38521
+# of Seqs:	2263106
+
+Output File Names: 
+stability.trim.contigs.summary
+
+It took 40 secs to summarize 2263106 sequences.
+
+mothur > screen.seqs(fasta=stability.trim.contigs.fasta, group=stability.contigs.groups, maxambig=0, maxlength=470,minlength=460,maxambig=0,maxhomop=8)
+
+Using 2 processors.
+
+Output File Names: 
+stability.trim.contigs.good.fasta
+stability.trim.contigs.bad.accnos
+stability.contigs.good.groups
+
+
+It took 50 secs to screen 2263106 sequences.
+
+mothur > summary.seqs(fasta=stability.trim.contigs.good.fasta)
+
+Using 2 processors.
+
+		Start	End	NBases	Ambigs	Polymer	NumSeqs
+Minimum:	1	460	460	0	4	1
+2.5%-tile:	1	464	464	0	4	20822
+25%-tile:	1	464	464	0	5	208216
+Median: 	1	465	465	0	6	416432
+75%-tile:	1	465	465	0	6	624648
+97.5%-tile:	1	465	465	0	6	812042
+Maximum:	1	470	470	0	8	832863
+Mean:	1	464.628	464.628	0	5.4059
+# of Seqs:	832863
+
+Output File Names: 
+stability.trim.contigs.good.summary
+
+It took 13 secs to summarize 832863 sequences.
+
+mothur > unique.seqs(fasta=stability.trim.contigs.good.fasta)
+832863	219453
+
+Output File Names: 
+stability.trim.contigs.good.names
+stability.trim.contigs.good.unique.fasta
+
+
+mothur > 
+[ERROR]: You are missing (
+Invalid.
+
+mothur > count.seqs(name=stability.trim.contigs.good.names, group=stability.contigs.good.groups)
+
+Using 2 processors.
+It took 5 secs to create a table for 832863 sequences.
+
+
+Total number of sequences: 832863
+
+Output File Names: 
+stability.trim.contigs.good.count_table
+
+
+mothur > summary.seqs(count=stability.trim.contigs.good.count_table)
+Using stability.trim.contigs.good.unique.fasta as input file for the fasta parameter.
+
+Using 2 processors.
+
+		Start	End	NBases	Ambigs	Polymer	NumSeqs
+Minimum:	1	460	460	0	4	1
+2.5%-tile:	1	464	464	0	4	20822
+25%-tile:	1	464	464	0	5	208216
+Median: 	1	465	465	0	6	416432
+75%-tile:	1	465	465	0	6	624648
+97.5%-tile:	1	465	465	0	6	812042
+Maximum:	1	470	470	0	8	832863
+Mean:	1	464.628	464.628	0	5.4059
+# of unique seqs:	219453
+total # of seqs:	832863
+
+Output File Names: 
+stability.trim.contigs.good.unique.summary
+
+It took 4 secs to summarize 832863 sequences.
+
+mothur > pcr.seqs(fasta=silva.bacteria.fasta, start=6428, end=23444, keepdots=F, processors=2)
+
+Using 2 processors.
+
+Output File Names: 
+silva.bacteria.pcr.fasta
+
+
+It took 18 secs to screen 14956 sequences.
+
+mothur > system(mv silva.bacteria.pcr.fasta silva.v4.fasta)
+
+
+mothur > summary.seqs(fasta=silva.v4.fasta)
+
+Using 2 processors.
+
+		Start	End	NBases	Ambigs	Polymer	NumSeqs
+Minimum:	1	16155	383	0	3	1
+2.5%-tile:	2	17016	403	0	4	374
+25%-tile:	2	17016	406	0	4	3740
+Median: 	2	17016	425	0	5	7479
+75%-tile:	2	17016	428	0	5	11218
+97.5%-tile:	2	17016	429	1	6	14583
+Maximum:	8	17016	462	5	9	14956
+Mean:	2.0006	17015.9	418.359	0.0961487	4.86079
+# of Seqs:	14956
+
+Output File Names: 
+silva.v4.summary
+
+It took 5 secs to summarize 14956 sequences.
+
+mothur > align.seqs(fasta=stability.trim.contigs.good.unique.fasta, reference=silva.v4.fasta)
+
+Using 2 processors.
+
+Reading in the silva.v4.fasta template sequences...	DONE.
+It took 6 to read  14956 sequences.
+Aligning sequences from stability.trim.contigs.good.unique.fasta ...
+[WARNING]: Some of your sequences generated alignments that eliminated too many bases, a list is provided in stability.trim.contigs.good.unique.flip.accnos. If you set the flip parameter to true mothur will try aligning the reverse compliment as well.
+It took 467 secs to align 219453 sequences.
+
+
+Output File Names: 
+stability.trim.contigs.good.unique.align
+stability.trim.contigs.good.unique.align.report
+stability.trim.contigs.good.unique.flip.accnos
+
+
+mothur > summary.seqs(fasta=stability.trim.contigs.good.unique.align, count=stability.trim.contigs.good.count_table)
+
+Using 2 processors.
+
+		Start	End	NBases	Ambigs	Polymer	NumSeqs
+Minimum:	2	6	2	0	1	1
+2.5%-tile:	2	17016	427	0	4	20822
+25%-tile:	2	17016	427	0	5	208216
+Median: 	2	17016	428	0	5	416432
+75%-tile:	2	17016	428	0	6	624648
+97.5%-tile:	2	17016	428	0	6	812042
+Maximum:	16159	17016	433	0	8	832863
+Mean:	5.0641	17015.7	427.551	0	5.13924
+# of unique seqs:	219453
+total # of seqs:	832863
+
+Output File Names: 
+stability.trim.contigs.good.unique.summary
+
+It took 87 secs to summarize 832863 sequences.
+
+mothur > screen.seqs(fasta=stability.trim.contigs.good.unique.align, count=stability.trim.contigs.good.count_table, summary=stability.trim.contigs.good.unique.summary, start=2, end=17016)
+
+Using 2 processors.
+
+Output File Names: 
+stability.trim.contigs.good.unique.good.summary
+stability.trim.contigs.good.unique.good.align
+stability.trim.contigs.good.unique.bad.accnos
+stability.trim.contigs.good.good.count_table
+
+
+It took 112 secs to screen 219453 sequences.
+
+mothur > summary.seqs(fasta=current, count=current)
+Using stability.trim.contigs.good.good.count_table as input file for the count parameter.
+Using stability.trim.contigs.good.unique.good.align as input file for the fasta parameter.
+
+Using 2 processors.
+
+		Start	End	NBases	Ambigs	Polymer	NumSeqs
+Minimum:	2	17016	396	0	3	1
+2.5%-tile:	2	17016	427	0	4	20818
+25%-tile:	2	17016	427	0	5	208173
+Median: 	2	17016	428	0	5	416346
+75%-tile:	2	17016	428	0	6	624518
+97.5%-tile:	2	17016	428	0	6	811873
+Maximum:	2	17016	433	0	8	832690
+Mean:	2	17016	427.638	0	5.13968
+# of unique seqs:	219301
+total # of seqs:	832690
+
+Output File Names: 
+stability.trim.contigs.good.unique.good.summary
+
+It took 90 secs to summarize 832690 sequences.
+
+mothur > filter.seqs(fasta=stability.trim.contigs.good.unique.good.align, vertical=T, trump=.)
+
+Using 2 processors.
+Creating Filter... 
+
+
+Running Filter... 
+
+
+
+Length of filtered alignment: 712
+Number of columns removed: 16304
+Length of the original alignment: 17016
+Number of sequences used to construct filter: 219301
+
+Output File Names: 
+stability.filter
+stability.trim.contigs.good.unique.good.filter.fasta
+
+
+mothur > unique.seqs(fasta=stability.trim.contigs.good.unique.good.filter.fasta, count=stability.trim.contigs.good.good.count_table)
+219301	84557
+
+Output File Names: 
+stability.trim.contigs.good.unique.good.filter.count_table
+stability.trim.contigs.good.unique.good.filter.unique.fasta
+
+
+mothur > 
+[ERROR]: You are missing (
+Invalid.
+
+mothur > pre.cluster(fasta=stability.trim.contigs.good.unique.good.filter.unique.fasta, count=stability.trim.contigs.good.unique.good.filter.count_table, diffs=4)
+
+Using 2 processors.
+
+Invalid.
+
+mothur > pre.cluster(fasta=stability.trim.contigs.good.unique.good.filter.unique.fasta, count=stability.trim.contigs.good.unique.good.filter.count_table, diffs=4)
+
+Using 2 processors.
+
+Processing group Adiu_O36:
+Processing group Tpar_O32:
+7584	393	7191
+Total number of sequences before pre.cluster was 7584.
+pre.cluster removed 7191 sequences.
+
+It took 1 secs to cluster 7584 sequences.
+
+Processing group Tpar_O33:
+8682	521	8161
+Total number of sequences before pre.cluster was 8682.
+pre.cluster removed 8161 sequences.
+
+It took 1 secs to cluster 8682 sequences.
+
+Processing group Tpar_O34:
+5623	315	5308
+Total number of sequences before pre.cluster was 5623.
+pre.cluster removed 5308 sequences.
+
+It took 0 secs to cluster 5623 sequences.
+
+Processing group Ttae_O39:
+14210	1099	13111
+Total number of sequences before pre.cluster was 14210.
+pre.cluster removed 13111 sequences.
+
+It took 2 secs to cluster 14210 sequences.
+
+Processing group Adiu_O37:
+6776	493	6283
+Total number of sequences before pre.cluster was 6776.
+pre.cluster removed 6283 sequences.
+
+It took 0 secs to cluster 6776 sequences.
+
+Processing group Ttae_O40:
+11549	803	10746
+Total number of sequences before pre.cluster was 11549.
+pre.cluster removed 10746 sequences.
+
+It took 1 secs to cluster 11549 sequences.
+
+Processing group Tcon_O42:
+13012	955	12057
+Total number of sequences before pre.cluster was 13012.
+pre.cluster removed 12057 sequences.
+
+It took 2 secs to cluster 13012 sequences.
+
+Processing group Ttae_O41:
+10739	825	9914
+Total number of sequences before pre.cluster was 10739.
+pre.cluster removed 9914 sequences.
+
+It took 1 secs to cluster 10739 sequences.
+
+Processing group Tcon_O43:
+7885	498	7387
+Total number of sequences before pre.cluster was 7885.
+pre.cluster removed 7387 sequences.
+
+It took 1 secs to cluster 7885 sequences.
+
+Processing group Tcon_O44:
+12759	802	11957
+Total number of sequences before pre.cluster was 12759.
+pre.cluster removed 11957 sequences.
+
+It took 1 secs to cluster 12759 sequences.
+4256	251	4005
+Total number of sequences before pre.cluster was 4256.
+pre.cluster removed 4005 sequences.
+
+It took 0 secs to cluster 4256 sequences.
+It took 9 secs to run pre.cluster.
+
+Output File Names: 
+stability.trim.contigs.good.unique.good.filter.unique.precluster.fasta
+stability.trim.contigs.good.unique.good.filter.unique.precluster.count_table
+stability.trim.contigs.good.unique.good.filter.unique.precluster.Adiu_O36.map
+stability.trim.contigs.good.unique.good.filter.unique.precluster.Adiu_O37.map
+stability.trim.contigs.good.unique.good.filter.unique.precluster.Tcon_O42.map
+stability.trim.contigs.good.unique.good.filter.unique.precluster.Tcon_O43.map
+stability.trim.contigs.good.unique.good.filter.unique.precluster.Tcon_O44.map
+stability.trim.contigs.good.unique.good.filter.unique.precluster.Tpar_O32.map
+stability.trim.contigs.good.unique.good.filter.unique.precluster.Tpar_O33.map
+stability.trim.contigs.good.unique.good.filter.unique.precluster.Tpar_O34.map
+stability.trim.contigs.good.unique.good.filter.unique.precluster.Ttae_O39.map
+stability.trim.contigs.good.unique.good.filter.unique.precluster.Ttae_O40.map
+stability.trim.contigs.good.unique.good.filter.unique.precluster.Ttae_O41.map
+
+
+mothur > chimera.uchime(fasta=stability.trim.contigs.good.unique.good.filter.unique.precluster.fasta, count=stability.trim.contigs.good.unique.good.filter.unique.precluster.count_table, dereplicate=t)
+
+Using 2 processors.
+
+uchime by Robert C. Edgar
+http://drive5.com/uchime
+This code is donated to the public domain.
+
+Checking sequences from stability.trim.contigs.good.unique.good.filter.unique.precluster.fasta ...
+
+It took 2 secs to check 393 sequences from group Tpar_O32.
+
+It took 8 secs to check 521 sequences from group Tpar_O33.
+
+It took 2 secs to check 315 sequences from group Tpar_O34.
+2399 here
+
+It took 14 secs to check 1099 sequences from group Adiu_O36.
+
+It took 7 secs to check 493 sequences from group Ttae_O39.
+
+It took 21 secs to check 803 sequences from group Adiu_O37.
+
+It took 16 secs to check 825 sequences from group Tcon_O42.
+
+It took 5 secs to check 498 sequences from group Tcon_O43.
+
+It took 40 secs to check 955 sequences from group Ttae_O40.
+
+It took 3 secs to check 251 sequences from group Tcon_O44.
+
+It took 16 secs to check 802 sequences from group Ttae_O41.
+
+Output File Names: 
+stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.pick.count_table
+stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.chimeras
+stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.accnos
+
+
+mothur > remove.seqs(fasta=stability.trim.contigs.good.unique.good.filter.unique.precluster.fasta, accnos=stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.accnos)
+[WARNING]: This command can take a namefile and you did not provide one. The current namefile is stability.trim.contigs.good.names which seems to match stability.trim.contigs.good.unique.good.filter.unique.precluster.fasta.
+Removed 669 sequences from your fasta file.
+
+Output File Names: 
+stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.fasta
+
+
+mothur > summary.seqs(fasta=current, count=current)
+Using stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.pick.count_table as input file for the count parameter.
+Using stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.fasta as input file for the fasta parameter.
+
+Using 2 processors.
+
+		Start	End	NBases	Ambigs	Polymer	NumSeqs
+Minimum:	1	712	396	0	3	1
+2.5%-tile:	1	712	427	0	4	20666
+25%-tile:	1	712	427	0	5	206652
+Median: 	1	712	428	0	5	413304
+75%-tile:	1	712	428	0	6	619956
+97.5%-tile:	1	712	428	0	6	805942
+Maximum:	1	712	433	0	8	826607
+Mean:	1	712	427.648	0	5.14627
+# of unique seqs:	6079
+total # of seqs:	826607
+
+Output File Names: 
+stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.summary
+
+It took 0 secs to summarize 826607 sequences.
+
+mothur > classify.seqs(fasta=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.fasta, count=stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.pick.count_table, reference=trainset9_032012.pds.fasta, taxonomy=trainset9_032012.pds.tax, cutoff=80)
+
+Using 2 processors.
+Generating search database...    DONE.
+It took 10 seconds generate search database. 
+
+Reading in the trainset9_032012.pds.tax taxonomy...	DONE.
+Calculating template taxonomy tree...     DONE.
+Calculating template probabilities...     DONE.
+It took 20 seconds get probabilities. 
+Classifying sequences from stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.fasta ...
+
+It took 75 secs to classify 6079 sequences.
+
+
+It took 0 secs to create the summary file for 6079 sequences.
+
+
+Output File Names: 
+stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pds.wang.taxonomy
+stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pds.wang.tax.summary
+
+
+mothur > remove.lineage(fasta=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.fasta, count=stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.pick.count_table, taxonomy=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pds.wang.taxonomy, taxon=Chloroplast-Mitochondria-unknown-Archaea-Eukaryota)
+
+[NOTE]: The count file should contain only unique names, so mothur assumes your fasta, list and taxonomy files also contain only uniques.
+
+
+Output File Names: 
+stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pds.wang.pick.taxonomy
+stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.fasta
+stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.pick.pick.count_table
+
+
+mothur > dist.seqs(fasta=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.fasta, cutoff=0.20)
+
+Using 2 processors.
+
+Output File Names: 
+stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.dist
+
+It took 52 seconds to calculate the distances for 6078 sequences.
+
+mothur > cluster(column=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.dist, count=stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.pick.pick.count_table)
+********************#****#****#****#****#****#****#****#****#****#****#
+Reading matrix:     |||||||||||||||||||||||||||||||||||||||||||||||||||
+***********************************************************************
+changed cutoff to 0.0699058
+It took 109 seconds to cluster
+
+Output File Names: 
+stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.list
+
+
+mothur > make.shared(list=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.list,count=stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.pick.pick.count_table, label=0.03)
+0.03
+
+Output File Names: 
+stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.shared
+
+
+mothur > classify.otu(list=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.list,count=stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.pick.pick.count_table, taxonomy=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pds.wang.pick.taxonomy,label=0.03)
+0.03	862
+
+Output File Names: 
+stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.0.03.cons.taxonomy
+stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.0.03.cons.tax.summary
+
+
+mothur > system(mv stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.an.unique_list.shared stability.an.shared)
+mv: rename stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.an.unique_list.shared to stability.an.shared: No such file or directory
+
+
+mothur > 
+[ERROR]: You are missing (
+Invalid.
+
+mothur > system(mv stab.an.unique_list.shared stability.an.shared)
+mv: rename stab.an.unique_list.shared to stability.an.shared: No such file or directory
+
+
+mothur > count.groups(shared=stability.an.shared)
+Adiu_O36 contains 156229.
+Adiu_O37 contains 100555.
+Tcon_O42 contains 83080.
+Tcon_O43 contains 45386.
+Tcon_O44 contains 31366.
+Tpar_O32 contains 55934.
+Tpar_O33 contains 65301.
+Tpar_O34 contains 52978.
+Ttae_O39 contains 38575.
+Ttae_O40 contains 104226.
+Ttae_O41 contains 92975.
+
+Total seqs: 826605.
+
+Output File Names: 
+stability.an.count.summary
+
+
+mothur > sub.sample(shared=stability.an.shared, size=31366)
+Sampling 31366 from each group.
+0.03
+
+Output File Names: 
+stability.an.0.03.subsample.shared
+
+
+mothur > rarefaction.single(shared=stability.an.shared, calc=sobs, freq=100)
+
+Using 2 processors.
+
+Processing group Adiu_O36
+
+0.03
+
+Processing group Adiu_O37
+
+0.03
+
+Processing group Tcon_O42
+
+0.03
+
+Processing group Tcon_O43
+
+0.03
+
+Processing group Tcon_O44
+
+0.03
+
+Processing group Tpar_O32
+
+0.03
+
+Processing group Tpar_O33
+
+0.03
+
+Processing group Tpar_O34
+
+0.03
+
+Processing group Ttae_O39
+
+0.03
+
+Processing group Ttae_O40
+
+0.03
+
+Processing group Ttae_O41
+
+0.03
+
+Output File Names: 
+stability.an.groups.rarefaction
+
+
+mothur > summary.single(shared=stability.an.shared, calc=nseqs-coverage-sobs-invsimpson, subsample=31366)
+
+Processing group Adiu_O36
+
+0.03
+
+Processing group Adiu_O37
+
+0.03
+
+Processing group Tcon_O42
+
+0.03
+
+Processing group Tcon_O43
+
+0.03
+
+Processing group Tcon_O44
+
+0.03
+
+Processing group Tpar_O32
+
+0.03
+
+Processing group Tpar_O33
+
+0.03
+
+Processing group Tpar_O34
+
+0.03
+
+Processing group Ttae_O39
+
+0.03
+
+Processing group Ttae_O40
+
+0.03
+
+Processing group Ttae_O41
+
+0.03
+
+Output File Names: 
+stability.an.groups.ave-std.summary
+stability.an.groups.summary
+
